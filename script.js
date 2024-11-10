@@ -144,19 +144,18 @@ function SudokuSolver(board, i, j, n) {
 }
 
 // Check if it's valid to place a number at the given cell
-function isValid(arr, i, j, num) {
+// Check if it's valid to place a number at the given cell
+function isValid(board, i, j, num) {
     const n = 9;
 
     // Check row
     for (let col = 0; col < n; col++) {
-        let value = parseInt(arr[i][col].innerText);  // Get the value from arr (user input)
-        if (value === num) return false;  // If the number is already in the row, it's not valid
+        if (board[i][col] === num) return false;  // If the number is already in the row, it's not valid
     }
 
     // Check column
     for (let row = 0; row < n; row++) {
-        let value = parseInt(arr[row][j].innerText);  // Get the value from arr (user input)
-        if (value === num) return false;  // If the number is already in the column, it's not valid
+        if (board[row][j] === num) return false;  // If the number is already in the column, it's not valid
     }
 
     // Check 3x3 subgrid
@@ -164,8 +163,7 @@ function isValid(arr, i, j, num) {
     const subgridStartCol = Math.floor(j / 3) * 3;
     for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
-            let value = parseInt(arr[subgridStartRow + row][subgridStartCol + col].innerText);  // Get the value from arr (user input)
-            if (value === num) {
+            if (board[subgridStartRow + row][subgridStartCol + col] === num) {
                 return false;  // If the number is already in the 3x3 subgrid, it's not valid
             }
         }
@@ -173,6 +171,7 @@ function isValid(arr, i, j, num) {
 
     return true;
 }
+
 
 
 // Function to reset the board to all 0s
