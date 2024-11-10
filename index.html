@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techie's Code : Sudoku Solver</title>
+    <title>Jeevith P : Sudoku Solver</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="Header">
-        <div id="logo">
-            <img src="./logo.png" alt="Techies Code" srcset="">
-        </div>
-        <div id="name">Techie's Code</div>
+        <h1 class="mainHeading">Sudoku Solver</h1>        
     </div>
-    <div class="Heading">Sudoku Solver</div>
+    
+
     <div class="sudoku_grid">
         <div id="0" class="box1 bl bt"></div>
         <div id="1" class="box1 bt"></div>
@@ -100,10 +98,24 @@
         <div id="79" class="box3 bb"></div>
         <div id="80" class="box3 bb br"></div>
     </div>
-
+    
+    <div id="number-selection">
+        <button class="number-btn" data-number="1" >1</button>
+        <button class="number-btn" data-number="2">2</button>
+        <button class="number-btn" data-number="3">3</button>
+        <button class="number-btn" data-number="4">4</button>
+        <button class="number-btn" data-number="5">5</button>
+        <button class="number-btn" data-number="6">6</button>
+        <button class="number-btn" data-number="7">7</button>
+        <button class="number-btn" data-number="8">8</button>
+        <button class="number-btn" data-number="9">9</button>
+    </div>
+    
     <div class="Buttons">
         <button id="GetPuzzle"> GetPuzzle </button>
+        <button id="CheckSolution">Check Solution</button>
         <button id="SolvePuzzle"> SolvePuzzle </button>
+        <button id="Reset">Reset</button>
     </div>
 
     <script src="./Script.js"></script>
