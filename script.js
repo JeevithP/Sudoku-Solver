@@ -94,21 +94,18 @@ Reset.onclick = () => {
 
 CheckSolution.onclick = () => {
     let isValidSolution = true;
-    console.log(arr);
+    //console.log(arr);
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
-            let value = parseInt(arr[i][j].innerText);
-
-            // Only check cells that are filled (not 0 or empty)
-            if (value !== 0) {
-                if (!isValid(arr, i, j, value)) {
-                    isValidSolution = false;
-                    arr[i][j].style.backgroundColor = 'red';  // Highlight invalid cell in red
-                } else {
-                    arr[i][j].style.backgroundColor = '';  // Reset background color for valid cells
-                }
+            let temp=board[i][j];
+            board[i][j]=0;
+            if (!isValid(board, i, j, temp)) {
+                isValidSolution = false;
+                arr[i][j].style.backgroundColor = 'red';  // Highlight invalid cell in red
+            } else {
+                arr[i][j].style.backgroundColor = '';  // Reset background color for valid cells
             }
-			
+			board[i][j]=temp;
         }
     }
 
